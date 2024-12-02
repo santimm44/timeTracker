@@ -1,0 +1,16 @@
+@font-face{
+    font-family: 'Rubik';
+    src: url(../asset/font/Rubik-VariableFont_wght.ttf);
+}
+body 
+{
+    /*Default Font*/
+    font-family: 'Rubik';
+    /*Default BG Color*/
+    background-color: #0e1323;
+    /*Default Color*/
+    color: #FFF;
+}
+
+
+/*hover effects for active*/
