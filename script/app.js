@@ -25,10 +25,37 @@ function getData(){
         console.log(data);
         return data;
     });
-
-
 }
-alert("help me")
+
+function defaultInformation(){
+    getData().then(arrayOfData => {
+
+        console.log(arrayOfData[5].timeframes.weekly.current);
+
+        workData.innerText = `${arrayOfData[0].timeframes.weekly.current}hrs`;
+        workSubData.innerText = `${arrayOfData[0].timeframes.weekly.previous}hrs`;
+
+        playData.innerText = `${arrayOfData[1].timeframes.weekly.current}hrs`;
+        playSubData.innerText = `${arrayOfData[1].timeframes.weekly.previous}hrs`;
+
+        studyData.innerText = `${arrayOfData[2].timeframes.weekly.current}hrs`;
+        studySubData.innerText = `${arrayOfData[2].timeframes.weekly.previous}hrs`;
+
+        exerciseData.innerText = `${arrayOfData[3].timeframes.weekly.current}hrs`;
+        exerciseSubData.innerText = `${arrayOfData[3].timeframes.weekly.previous}hrs`;
+
+        socialData.innerText = `${arrayOfData[4].timeframes.weekly.current}hrs`;
+        socialSubData.innerText = `${arrayOfData[4].timeframes.weekly.previous}hrs`;
+
+        selfCareData.innerText = `${arrayOfData[5].timeframes.weekly.current}hrs`;
+        selfCareSubData.innerText = `${arrayOfData[5].timeframes.weekly.previous}hrs`;
+    })
+    
+    //selfCareData.innerText =
+    //selfCareSubData.innerText = arrayOfData[5];
+}
+
+defaultInformation();
 
 getData();
 
