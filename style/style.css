@@ -70,10 +70,16 @@ body
     background-color: #33397A;
 }
 
+
+
 .secondary-card-text__color{
     color: #7078C9;
 }
 .secondary-card-text__color:hover{
+    color: #FFF;
+}
+
+.secondary-card-text__color-active{
     color: #FFF;
 }
 

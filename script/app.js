@@ -10,6 +10,9 @@ let playSubData = document.getElementById("playSubData");
 //study card ids
 let studyData = document.getElementById("studyData");
 let studySubData = document.getElementById("studySubData");
+//exercise card ids
+let exerciseData = document.getElementById("exerciseData")
+let exerciseSubData = document.getElementById("exerciseSubData")
 //social card ids
 let socialData = document.getElementById("socialData");
 let socialSubData = document.getElementById("socialSubData");
@@ -17,68 +20,104 @@ let socialSubData = document.getElementById("socialSubData");
 let selfCareData = document.getElementById("selfCareData");
 let selfCareSubData = document.getElementById("selfCareSubData");
 
+const listOfAffectedPTags =
+    [
+        "workData", "workSubData",
+        "playData", "playSubData",
+        "studyData", "studySubData",
+        "exerciseData", "exerciseSubData",
+        "socialData", "socialSubData",
+        "selfCareData", "selfCareSubData"
+    ];
 
-function getData(){
-    return fetch("./data/data.json")
-    .then((response) => response.json())
-    .then((data) => {
-        console.log(data);
-        return data;
-    });
+async function getData() {
+    const jsonData = await fetch("./data/data.json")
+    const data = await jsonData.json();
+
+    return data;
 }
 
-function defaultInformation(){
-    getData().then(arrayOfData => {
 
-        console.log(arrayOfData[5].timeframes.weekly.current);
+async function defaultInformation() {
+    let arrayOfData = await getData();
 
-        workData.innerText = `${arrayOfData[0].timeframes.weekly.current}hrs`;
-        workSubData.innerText = `${arrayOfData[0].timeframes.weekly.previous}hrs`;
+    dailyBtn.className = "secondary-card-text__color";
+    monthlyBtn.className = "secondary-card-text__color";
+    weeklyBtn.className = "secondary-card-text__color-active";
 
-        playData.innerText = `${arrayOfData[1].timeframes.weekly.current}hrs`;
-        playSubData.innerText = `${arrayOfData[1].timeframes.weekly.previous}hrs`;
+    for (let i = 0; i < listOfAffectedPTags.length; i++) {
+        let index = Math.floor(i / 2);
 
-        studyData.innerText = `${arrayOfData[2].timeframes.weekly.current}hrs`;
-        studySubData.innerText = `${arrayOfData[2].timeframes.weekly.previous}hrs`;
+        if (i % 2 == 0) {
+            document.getElementById(listOfAffectedPTags[i]).innerText = `${arrayOfData[index].timeframes.weekly.current}hrs`
+        }
+        else {
+            document.getElementById(listOfAffectedPTags[i]).innerText = `${arrayOfData[index].timeframes.weekly.previous}hrs`
+        }
+    }
 
-        exerciseData.innerText = `${arrayOfData[3].timeframes.weekly.current}hrs`;
-        exerciseSubData.innerText = `${arrayOfData[3].timeframes.weekly.previous}hrs`;
 
-        socialData.innerText = `${arrayOfData[4].timeframes.weekly.current}hrs`;
-        socialSubData.innerText = `${arrayOfData[4].timeframes.weekly.previous}hrs`;
 
-        selfCareData.innerText = `${arrayOfData[5].timeframes.weekly.current}hrs`;
-        selfCareSubData.innerText = `${arrayOfData[5].timeframes.weekly.previous}hrs`;
-    })
-    
-    //selfCareData.innerText =
-    //selfCareSubData.innerText = arrayOfData[5];
 }
 
 defaultInformation();
 
-getData();
+dailyBtn.addEventListener("click", async function () {
+    let arrayOfData = await getData();
 
-dailyBtn.addEventListener("click", function(){
+    weeklyBtn.className = "secondary-card-text__color";
+    monthlyBtn.className = "secondary-card-text__color";
+    dailyBtn.className = "secondary-card-text__color-active";
 
+    for (let i = 0; i < listOfAffectedPTags.length; i++) {
+        let index = Math.floor(i / 2);
+
+        if (i % 2 == 0) {
+            document.getElementById(listOfAffectedPTags[i]).innerText = `${arrayOfData[index].timeframes.daily.current}hrs`
+        }
+        else {
+            document.getElementById(listOfAffectedPTags[i]).innerText = `${arrayOfData[index].timeframes.daily.previous}hrs`
+        }
+    }
 })
 
 
-weeklyBtn.addEventListener("click", function(){
-    
+weeklyBtn.addEventListener("click", async function () {
+    let arrayOfData = await getData();
+
+    dailyBtn.className = "secondary-card-text__color";
+    monthlyBtn.className = "secondary-card-text__color";
+    weeklyBtn.className = "secondary-card-text__color-active";
+
+    for (let i = 0; i < listOfAffectedPTags.length; i++) {
+        let index = Math.floor(i / 2);
+
+        if (i % 2 == 0) {
+            document.getElementById(listOfAffectedPTags[i]).innerText = `${arrayOfData[index].timeframes.weekly.current}hrs`
+        }
+        else {
+            document.getElementById(listOfAffectedPTags[i]).innerText = `${arrayOfData[index].timeframes.weekly.previous}hrs`
+        }
+    }
+
 })
 
-monthlyBtn.addEventListener("click", function(){
-    
+monthlyBtn.addEventListener("click", async function () {
+    let arrayOfData = await getData();
+
+    weeklyBtn.className = "secondary-card-text__color";
+    dailyBtn.className = "secondary-card-text__color";
+    monthlyBtn.className = "secondary-card-text__color-active";
+
+    for (let i = 0; i < listOfAffectedPTags.length; i++) {
+        let index = Math.floor(i / 2);
+
+        if (i % 2 == 0) {
+            document.getElementById(listOfAffectedPTags[i]).innerText = `${arrayOfData[index].timeframes.monthly.current}hrs`
+        }
+        else {
+            document.getElementById(listOfAffectedPTags[i]).innerText = `${arrayOfData[index].timeframes.monthly.previous}hrs`
+        }
+    }
 })
 
-
-
-
-
-
-// function testIDs(){
-//     selfCareSubData.innerText = "Testing"
-// }
-
-// testIDs();
