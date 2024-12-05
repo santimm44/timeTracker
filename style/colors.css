@@ -1,0 +1,54 @@
+.work__bg{
+    background-color: #FF8B64;
+}
+
+.play__bg{
+    background-color: #55C2E6;
+}
+.study__bg{
+    background-color: #FF5E7D ;
+}
+.exercise__bg{
+    background-color: #4BCF82;
+}
+.social__bg{
+    background-color: #7335D2;
+}
+.self-care__bg{
+    background-color: #F1C75B;
+}
+
+/*Jeremy section start*/
+.card-textbox__colors{
+    color: #FFF;
+    background-color: #1C204B;
+}
+
+
+.secondary-card-text__color{
+    color: #7078C9;
+}
+
+
+.secondary-card-text__color-active{
+    color: #FFF;
+}
+.card--top{
+    background-color: #5747EA;
+}
+
+.card--top__text{
+    color: #BBC0FF;
+}
+
+
+/*Jeremy section ends*/
+
+.ellipsis__hover{
+    fill: #BBC0FF;
+}
+
+
+.previous-hrs__text{
+    color: #BBC0FF;
+}

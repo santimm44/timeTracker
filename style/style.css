@@ -1,3 +1,5 @@
+@import url("colors.css");
+
 @font-face{
     font-family: 'Rubik';
     src: url(../asset/font/Rubik-VariableFont_wght.ttf);
@@ -13,36 +15,12 @@ body
     height: 100vh;
 }
 
-.card__min-width
-{
-    /* min-width: 15rem; */
-    height: 100%;
+
+.card__min-width{
+     height: 100%; 
 }
 
-/*Works, but the gap can't be applied*/
-/* .row__height{
-    height: 100%;
-} */
 
-.work__bg{
-    background-color: #FF8B64;
-}
-
-.play__bg{
-    background-color: #55C2E6;
-}
-.study__bg{
-    background-color: #FF5E7D ;
-}
-.exercise__bg{
-    background-color: #4BCF82;
-}
-.social__bg{
-    background-color: #7335D2;
-}
-.self-care__bg{
-    background-color: #F1C75B;
-}
 .icons__margins{
     margin-bottom: -1.0rem;
     margin-top: -.5rem;
@@ -54,42 +32,6 @@ body
     height: 2.5rem;
 }
 
-.ellipsis__hover{
-    fill: #BBC0FF;
-}
-.ellipsis__hover:hover{
-    fill: #FFF;
-}
-
-/*Jeremy section*/
-.card-textbox__colors{
-    color: #FFF;
-    background-color: #1C204B;
-}
-.card-textbox__colors:hover{
-    background-color: #33397A;
-}
-
-
-
-.secondary-card-text__color{
-    color: #7078C9;
-}
-.secondary-card-text__color:hover{
-    color: #FFF;
-}
-
-.secondary-card-text__color-active{
-    color: #FFF;
-}
-
-.card--top{
-    background-color: #5747EA;
-}
-
-.card--top__text{
-    color: #BBC0FF;
-}
 
 .image-div__size{
     width: 4.875rem;
@@ -100,4 +42,106 @@ body
         border:#FFF solid .25rem;
         border-radius: 50%;
     }
+}
+
+.card-textbox__colors:hover{
+    background-color: #33397A;
+}
+
+.secondary-card-text__color:hover{
+    color: #FFF;
+}
+.ellipsis__hover:hover{
+    fill: #FFF;
+}
+
+.current-hrs__text{
+    font-size: px;
+}
+.card__padding{
+    padding: 3rem;
+}
+
+.jeremy-card__alignment{
+    display: flex;
+    justify-content: end;
+}
+
+/*responsiveness*/
+@media  (max-width:1396px) {
+    .current-hrs__text{
+        font-size: 3.0rem;
+    }
+}
+@media (max-width: 1250px){
+    .current-hrs__text{
+        font-size: 2.0rem;
+    }
+}
+@media (max-width: 1227px){
+    .name__text{
+        font-size: 2rem;
+        padding-bottom: 0;
+    }
+    .current-hrs__text{
+        margin-bottom: 0rem;
+    }
+}
+
+@media (max-width: 1025px){
+    .name__text{
+        font-size: 1.8rem;
+    }
+    .card__padding{
+        padding: 2rem;
+    }
+}
+
+
+@media (max-width: 955px){
+    .current-hrs__text{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width:767px){
+    body{
+        height: auto;
+    }
+    .card__min-width{
+        width: 100%;
+    }
+    .text-alignment__mobile-responsive{
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+    }
+
+    .image-div__alignment{
+        display: flex;
+        align-items: center;        
+    }
+
+    .name__text{
+        font-size: 1.5rem;
+    }
+
+    .jeremy-div__mobile-responsive{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+    }
+    .card__padding{
+        padding-right: .25rem;
+        padding-left: .25rem;
+    }
+    .text-alignment__center{
+        display: flex;
+        align-items: center;
+    }
+}
+
+.container__padding{
+    padding-top: 10rem;
 }
