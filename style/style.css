@@ -56,7 +56,7 @@ body
 }
 
 .current-hrs__text{
-    font-size: px;
+    font-size: 2.5rem;
 }
 .card__padding{
     padding: 3rem;
@@ -70,7 +70,7 @@ body
 /*responsiveness*/
 @media  (max-width:1396px) {
     .current-hrs__text{
-        font-size: 3.0rem;
+        font-size: 2.2rem;
     }
 }
 @media (max-width: 1250px){

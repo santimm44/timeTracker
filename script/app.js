@@ -58,7 +58,7 @@ function handleMediaQueryChange(event) {
     // If the screen width is greater than 767px
     thirdBody.className = "row";
     secondBody.className = "row ";
-    firstBody.className = "row";
+    firstBody.className = "row w-75 d-flex justify-content-center";
 
     cardOne.classList.remove("w-100");
     cardTwo.classList.remove("w-100");
@@ -67,7 +67,7 @@ function handleMediaQueryChange(event) {
     cardFive.classList.remove("w-100");
     cardSix.classList.remove("w-100");
 
-    buttonsDiv.className = "card-body d-flex flex-column justify-content-center rounded-5 card-textbox__colors";
+    buttonsDiv.className = "card-body d-flex flex-column justify-content-center rounded-4 card-textbox__colors";
   }
 }
 
@@ -100,9 +100,9 @@ async function getData() {
 async function defaultInformation() {
     let arrayOfData = await getData();
 
-    dailyBtn.className = "secondary-card-text__color";
+    dailyBtn.className = "secondary-card-text__color ";
     monthlyBtn.className = "secondary-card-text__color";
-    weeklyBtn.className = "secondary-card-text__color-active";
+    weeklyBtn.className = "secondary-card-text__color-active ";
 
     for (let i = 0; i < listOfAffectedPTags.length; i++) {
         let index = Math.floor(i / 2);

@@ -33,8 +33,11 @@
 .secondary-card-text__color-active{
     color: #FFF;
 }
-.card--top{
+.jeremy-card__color{
     background-color: #5747EA;
+}
+.card--top{
+    background-color: #1C204B;
 }
 
 .card--top__text{
